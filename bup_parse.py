@@ -200,7 +200,7 @@ def validateBUPData(bupData):
 
     magic = bupData[0:4].decode("ascii")
     if magic != BUP_HEADER_MAGIC:
-        print("Invalid BUP file: incorrect magic bytes (" + magici + ")")
+        print("Invalid BUP file: incorrect magic bytes (" + magic + ")")
         sys.exit(-1)
 
     # read fields from the dir struct
@@ -401,7 +401,7 @@ def main(argv):
         print("Valid .BUP file")
 
         if extractSave:
-            # everything have the BUP header is the raw save
+            # everything after the BUP header is the raw save
             outBuf = inBUPBuf[BUP_HEADER_SIZE:]
 
             outFile = open(saveName, "wb")
