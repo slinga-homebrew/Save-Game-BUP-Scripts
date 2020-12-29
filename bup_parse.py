@@ -2,6 +2,7 @@
 
 import time
 import datetime
+import hashlib
 
 BUP_HEADER_SIZE = 64
 BUP_HEADER_MAGIC = "Vmem"
@@ -233,6 +234,12 @@ def validateBUPData(bupData):
         print("Expected " + str(len(bupData) - BUP_HEADER_SIZE));
         print("Got " + str(dataSize))
         sys.exit(-1)
+        
+    # print the hash for the user
+    computedHashResult = hashlib.md5(bupData[BUP_HEADER_SIZE:])
+    computedHash = computedHashResult.hexdigest()
+    
+    print("\tMD5: " + computedHash)    
 
     # .BUP is valid
     return saveName
