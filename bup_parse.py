@@ -19,13 +19,13 @@ def usage():
     print("\nUsage:")
 
     print("Validate .BUP file.")
-    print('python3 parse_bup.py --input_bup <save_game.bup>\n')
+    print('python3 bup_parse.py --input_bup <save_game.bup>\n')
 
     print("Extract raw save from .BUP file.")
-    print('python3 parse_bup.py --input_bup <save_game.bup> --extract_raw_save\n')
+    print('python3 bup_parse.py --input_bup <save_game.bup> --extract_raw_save\n')
 
     print("Create .BUP from raw save.")
-    print('python3 parse_bup.py --save_name <name> --save_comment <comment> --save_date <date> --save_language <language> -input_save <raw_save.bin>\n')
+    print('python3 bup_parse --save_name <name> --save_comment <comment> --save_date <date> --save_language <language> --input_save <raw_save.bin>\n')
 
     sys.exit(1)
 
