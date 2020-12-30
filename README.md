@@ -12,19 +12,56 @@ To ensure compatiblity with all tools the .BUP file extension **must** be used.
 bup_parse.py is a helper script to convert between .BUP and raw save game files. Usage:
 
 ### Validate .BUP file
-```python3 parse_bup.py --input_bup <save_game.bup>```
+```python3 bup_parse.py --input_bup <save_game.BUP>```
+
+Ex.
+
+```python3 bup_parse.py  --input_bup SEGARALLY_1.BUP 
+Validating SEGARALLY_1.BUP
+	Save name: SEGARALLY_1
+	Comment: GHOSTS    
+	Language: Japanese
+	Date: 1994-03-20 23:29:00 (0x721a81)
+	Data Size: 62464
+	Block Size: 249
+	MD5: 07e0a5e3a0e7adc7e4816008af427cbd
+Valid .BUP file
+```
 
 Will validate and display information about the input bup file. 
 
-### Extract raw save from .BUP file
-```python3 parse_bup.py --input_bup <save_game.bup> --extract_raw_save```
+### Extract Raw Save From .BUP File
+```python3 bup_parse.py --input_bup <save_game.BUP> --extract_raw_save```
 
 Will extract the raw save game from the input bup file.
 
+Ex.
+
+```python3 bup_parse.py  --input_bup SEGARALLY_1.BUP --extract_raw_save
+Validating SEGARALLY_1.BUP
+	Save name: SEGARALLY_1
+	Comment: GHOSTS    
+	Language: Japanese
+	Date: 1994-03-20 23:29:00 (0x721a81)
+	Data Size: 62464
+	Block Size: 249
+	MD5: 07e0a5e3a0e7adc7e4816008af427cbd
+Valid .BUP file
+Successfully extracted SEGARALLY_1 (62464)
+```
+
 ### Create .BUP from raw save
-```python3 parse_bup.py --save_name <name> --save_comment <comment> --save_date <date> --save_language <language> -input_save <raw_save.bin>```
+```python3 bup_parse.py --save_name <name> --save_comment <comment> --save_date <date> --save_language <language> --input_save <raw_save.bin>```
 
 Given a raw save game, will create a valid .BUP file. All parameters except for input_save and save_name are optional. 
+
+Ex. 
+```python3 bup_parse.py --save_name SEGARALLY_1 --input_save SEGARALLY_1.BIN
+Successfully created SEGARALLY_1.BUP from SEGARALLY_1 raw save
+
+python3 bup_parse.py --save_name SEGARALLY_1 --input_save SEGARALLY_1.BIN --save_date 2020-12-12 --save_language English
+Successfully created SEGARALLY_1.BUP from SEGARALLY_1 raw save
+```
 
 ## Credits
 * [Cafe-Alpha](https://github.com/cafe-alpha/) is the creator of the .BUP file format
