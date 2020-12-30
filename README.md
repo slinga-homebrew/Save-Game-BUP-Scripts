@@ -16,7 +16,8 @@ bup_parse.py is a helper script to convert between .BUP and raw save game files.
 
 Ex.
 
-```python3 bup_parse.py  --input_bup SEGARALLY_1.BUP 
+```
+python3 bup_parse.py  --input_bup SEGARALLY_1.BUP 
 Validating SEGARALLY_1.BUP
 	Save name: SEGARALLY_1
 	Comment: GHOSTS    
@@ -37,7 +38,8 @@ Will extract the raw save game from the input bup file.
 
 Ex.
 
-```python3 bup_parse.py  --input_bup SEGARALLY_1.BUP --extract_raw_save
+```
+python3 bup_parse.py  --input_bup SEGARALLY_1.BUP --extract_raw_save
 Validating SEGARALLY_1.BUP
 	Save name: SEGARALLY_1
 	Comment: GHOSTS    
@@ -56,7 +58,8 @@ Successfully extracted SEGARALLY_1 (62464)
 Given a raw save game, will create a valid .BUP file. All parameters except for input_save and save_name are optional. 
 
 Ex. 
-```python3 bup_parse.py --save_name SEGARALLY_1 --input_save SEGARALLY_1.BIN
+```
+python3 bup_parse.py --save_name SEGARALLY_1 --input_save SEGARALLY_1.BIN
 Successfully created SEGARALLY_1.BUP from SEGARALLY_1 raw save
 
 python3 bup_parse.py --save_name SEGARALLY_1 --input_save SEGARALLY_1.BIN --save_date 2020-12-12 --save_language English
