@@ -2,11 +2,14 @@
 Scripts and documentation for working with Sega Saturn .BUP save game files. It is our hope that this will be the standardized save game format for Sega Saturn utilities such as [SS Save Parser](https://github.com/hitomi2500/ss-save-parser), [Pseudo Saturn Kai](https://ppcenter.webou.net/pskai/), [Save Game Copier](https://github.com/slinga-homebrew/Save-Game-Copier), [Save Game Extractor](https://github.com/slinga-homebrew/Save-Game-Extractor), and any other utilities. 
 
 ## .BUP File Format
-The .BUP file format is a 64-byte header that is prepended to the front of raw Saturn save game files. It contains among other fields, a magic signature, save game name (this is the name seen in the Saturn BIOS), save game comment (also seen in the Saturn BIOS), and other various metadata fields used by the Saturn. The multibyte length fields are stored in big endian. Immediately following the 64-byte header is the raw Saturn save data. 
+The .BUP file format is a 64-byte header that is prepended to the front of the Sega Saturn save game data. Note: This is the data as seen by the game via BUP_Read()\BUP_Write() not as seen by looking at raw memory in the backup address. The .BUP header contains among other fields, a magic signature, save game name (this is the name seen in the Saturn BIOS), save game comment (also seen in the Saturn BIOS), and other various metadata fields used by the Saturn. The multibyte length fields are stored in big endian. Immediately following the 64-byte header is the raw Saturn save data. 
 
 **Bup_header.h** contains definitions for the vmem_bup_header_t structure (the BUP header). Bup_header.h also contains implementations for bup_setdate() and bup_getdate() which are functions for converting between the Sega Saturn's date formats. 
 
 To ensure compatiblity with all tools the .BUP file extension **must** be used. 
+
+## Sample .BUP Saves
+Sample .BUP files can be obtained from [Save Game Copier](https://github.com/slinga-homebrew/Save-Game-Copier/tree/master/cd/SATSAVES) as well as from [Pseudo Saturn Kai](https://ppcenter.webou.net/pskai/).   
 
 ## bup_parse.py
 bup_parse.py is a helper script to convert between .BUP and raw save game files. Usage:
